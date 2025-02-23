@@ -8,7 +8,7 @@ class BeautyHealthController extends Controller
 {
     public function produk()
     {
-        return view('beauty-health')
+        return view('category.beauty-health')
             ->with('jual', 'Menjual Berbagai Produk Kecantikan');
     }
 }
