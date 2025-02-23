@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BabyKidController;
+use App\Http\Controllers\BeautyHealthController;
+use App\Http\Controllers\FoodBeverageController;
+use App\Http\Controllers\HomeCareController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class, 'index']);
+
+Route::prefix('category')->group(function (){
+    Route::get('/food-beverage', [FoodBeverageController::class, 'produk']);
+    Route::get('/beauty-health', [BeautyHealthController::class, 'produk']);
+    Route::get('/home-care', [HomeCareController::class, 'produk']);
+    Route::get('/baby-kid', [BabyKidController::class, 'produk']);
+});
